@@ -72,7 +72,7 @@
     var prevTitle = document.title;
     document.title = "Ameen-K-Resume";
     window.onafterprint = function () { document.title = prevTitle; window.onafterprint = null; };
-    window.print();
+    setTimeout(function () { window.print(); }, 60);
   };
 
   /* Galaxy (loads after the page; the site works fine without it) */
