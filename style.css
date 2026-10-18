@@ -54,17 +54,21 @@ footer{padding:28px clamp(18px,6vw,80px);color:var(--muted);border-top:1px solid
 @media print{
   .skip,.neb,#gl,#boot,.bar,main,footer{display:none!important}
   html,body{background:#fff!important;margin:0!important}
-  #resumeDoc{display:block!important;box-sizing:border-box;width:100%;padding:14mm 16mm;color:#1a1a1a;background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;line-height:1.5}
-  #resumeDoc h1{font-size:22pt;font-weight:700;letter-spacing:.01em;margin:0 0 3pt;color:#000}
-  #resumeDoc .r-role{margin:0 0 8pt;font-size:11pt;color:#444}
-  #resumeDoc .r-contact{margin:0;padding-bottom:10pt;border-bottom:2pt solid #000;font-size:9.5pt;color:#333}
-  #resumeDoc h2{font-size:12pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1.3pt solid #333;padding-bottom:4pt;margin:16pt 0 8pt;color:#000}
-  #resumeDoc .r-proj{margin:0 0 11pt;break-inside:avoid}
-  #resumeDoc .r-proj h3{font-size:11.5pt;font-weight:700;margin:0 0 2pt;display:flex;justify-content:space-between;gap:10pt;color:#000}
-  #resumeDoc .r-proj h3 span{font-weight:400;font-size:9pt;color:#555;white-space:nowrap}
-  #resumeDoc .r-proj p{margin:0 0 3pt}
-  #resumeDoc .r-links{font-size:8.5pt;color:#555;word-break:break-all}
-  #resumeDoc .r-skills{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:5pt 8pt}
-  #resumeDoc .r-skills li{background:#eee;border-radius:3pt;padding:2pt 8pt;font-size:9pt;color:#222}
-  @page{size:A4;margin:8mm}
+  #resumeDoc,#resumeDoc *{font-family:Arial,Helvetica,sans-serif!important}
+  #resumeDoc{display:block!important;box-sizing:border-box;width:100%;padding:18mm 20mm;color:#1a1a1a;background:#fff;font-size:11.5pt;line-height:1.6}
+  #resumeDoc h1{font-size:25pt;font-weight:700;letter-spacing:.01em;margin:0 0 4pt;color:#000}
+  #resumeDoc .r-role{margin:0 0 9pt;font-size:12pt;color:#444}
+  #resumeDoc .r-contact{margin:0;padding-bottom:11pt;border-bottom:2pt solid #000;font-size:10pt;color:#333}
+  #resumeDoc .r-contact a{color:#333;text-decoration:none}
+  #resumeDoc .r-sum{margin:14pt 0 0;color:#222}
+  #resumeDoc h2{font-size:13pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1.3pt solid #333;padding-bottom:5pt;margin:20pt 0 10pt;color:#000}
+  #resumeDoc .r-proj{margin:0 0 14pt;break-inside:avoid}
+  #resumeDoc .r-proj h3{font-size:12.5pt;font-weight:700;margin:0 0 3pt;display:flex;justify-content:space-between;gap:10pt;color:#000}
+  #resumeDoc .r-proj h3 span{font-weight:400;font-size:9.5pt;color:#555;white-space:nowrap}
+  #resumeDoc .r-proj p{margin:0 0 4pt}
+  #resumeDoc .r-links{font-size:9.5pt;color:#555}
+  #resumeDoc .r-links a{color:#555}
+  #resumeDoc .r-skills{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6pt 9pt}
+  #resumeDoc .r-skills li{background:#eee;border-radius:3pt;padding:3pt 9pt;font-size:9.5pt;color:#222}
+  @page{size:A4;margin:0}
 }

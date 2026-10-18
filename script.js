@@ -41,14 +41,14 @@
 
   /* Resume: built from this page's own content, so editing a project here keeps the resume in sync */
   var RESUME_PROJECT_LIMIT = 4;
+  var ROLE = "Computer Science student focused on practical web and Android development";
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function shortUrl(h) { return h.replace(/^mailto:/, "").replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""); }
+  function link(href) { return "<a href=\"" + esc(href) + "\">" + esc(shortUrl(href)) + "</a>"; }
   function buildResume() {
     var name = $(".logo").textContent.trim();
-    var role = $(".lede").textContent.trim();
+    var summary = $("#about .txt").textContent.trim();
     var cta = [].slice.call(document.querySelectorAll("#contact .cta a")).map(function (a) { return a.href; });
-    var mail = cta.filter(function (h) { return h.indexOf("mailto:") === 0; })[0] || "";
-    var li = cta.filter(function (h) { return h.indexOf("linkedin.com") > -1; })[0] || "";
-    var gh = cta.filter(function (h) { return h.indexOf("github.com") > -1; })[0] || "";
     var skills = [].slice.call(document.querySelectorAll(".tags li")).map(function (el) { return el.textContent.trim(); });
     var edu = "BSc in Computer Science (in progress) — University of the People";
     var cards = [].slice.call(document.querySelectorAll("#projects .win")).slice(0, RESUME_PROJECT_LIMIT);
@@ -56,13 +56,16 @@
       var t = (w.querySelector("h3") || {}).textContent || "";
       var s = (w.querySelector(".chip") || {}).textContent || "";
       var d = (w.querySelector("p") || {}).textContent || "";
-      var hrefs = [].slice.call(w.querySelectorAll(".row a")).map(function (a) { return a.href; });
+      var ls = [].slice.call(w.querySelectorAll(".row a")).map(function (a) {
+        return "<a href=\"" + esc(a.href) + "\">" + esc(a.textContent.trim()) + "</a>";
+      }).join("  ·  ");
       return "<div class=\"r-proj\"><h3>" + esc(t) + "<span>" + esc(s) + "</span></h3><p>" + esc(d) + "</p>" +
-        (hrefs.length ? "<div class=\"r-links\">" + esc(hrefs.join("   ")) + "</div>" : "") + "</div>";
+        (ls ? "<div class=\"r-links\">" + ls + "</div>" : "") + "</div>";
     }).join("");
     $("#resumeDoc").innerHTML =
-      "<h1>" + esc(name) + "</h1><p class=\"r-role\">" + esc(role) + "</p>" +
-      "<p class=\"r-contact\">" + [mail, li, gh].filter(Boolean).map(esc).join("   ") + "</p>" +
+      "<h1>" + esc(name) + "</h1><p class=\"r-role\">" + esc(ROLE) + "</p>" +
+      "<p class=\"r-contact\">" + cta.map(link).join("  ·  ") + "</p>" +
+      "<p class=\"r-sum\">" + esc(summary) + "</p>" +
       "<h2>Education</h2><p>" + esc(edu) + "</p>" +
       "<h2>Skills</h2><ul class=\"r-skills\">" + skills.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
       "<h2>Projects</h2>" + proj;
