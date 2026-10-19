@@ -2,7 +2,7 @@
 
 my_portfolio, showcasing [Fara'id Pro](https://github.com/m-ameen-k/Islamic-Inheritance-Calculator) (an Islamic inheritance calculator) and WireMirror (a low-latency Android screen-mirroring project).
 
-**Live:** https://m-ameen-k.github.io/
+**Live:** https://m-ameen-k.github.io/my_portfolio/
 
 ## Stack
 
