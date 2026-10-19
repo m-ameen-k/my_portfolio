@@ -88,7 +88,7 @@
     var g = new THREE.Group(); sc.add(g);
 
     var small = matchMedia("(pointer:coarse)").matches || innerWidth < 700;
-    var N = small ? 18000 : 36000, RAD = 5.5, BR = 3;
+    var N = small ? 12000 : 24000, RAD = 5.5, BR = 3;
     var pos = new Float32Array(N * 3), mixa = new Float32Array(N), scl = new Float32Array(N);
     function jit(r) { return Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.5 * r; }
     for (var i = 0; i < N; i++) {
@@ -167,7 +167,7 @@
       g.rotation.x = 0.55 + sm * 0.7 + mys * 0.2; g.rotation.y = sm * 1.2 + mxs * 0.5;
       g.position.x = wide ? 1.9 * (1 - k) : 0; g.position.y = wide ? 0 : 1.2 * (1 - k);
       cam.position.z = 5 - sm * 1.1;
-      cv.style.opacity = 1 - 0.5 * k;
+      cv.style.opacity = 1 - 0.82 * k;
       stars.rotation.y = t * 0.00002;
       R.render(sc, cam);
       if (!reduce) { running = true; requestAnimationFrame(frame); }

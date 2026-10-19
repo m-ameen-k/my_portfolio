@@ -48,7 +48,7 @@ footer{padding:28px clamp(18px,6vw,80px);color:var(--muted);border-top:1px solid
 .ld{width:min(240px,60vw);height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin:0 auto}
 .ld i{display:block;height:100%;width:0;background:var(--a);animation:ld 1.1s ease forwards}
 @keyframes ld{to{width:100%}}
-@media (max-width:640px){.dots{display:none}}
+@media (max-width:640px){.tools{display:none}.dots{gap:8px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 #resumeDoc{display:none}
 @media print{
